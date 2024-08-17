@@ -1,3 +1,3 @@
 my_age = 36
-my_age = 39
-print(my_age)
+inFuture = my_age + 3
+print(inFuture)
