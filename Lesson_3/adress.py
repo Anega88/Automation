@@ -1,4 +1,7 @@
-class Adress:
+from union import Addressable
+
+
+class Adress(Addressable):
 
     def __init__(self, postCode, city, street, building, appart):
         self.postCode = postCode

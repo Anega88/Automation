@@ -7,4 +7,4 @@ mail = Mailing(Adress("123456", "Belgrade", "Pushkina", 23, 128),
                "ANT05709865")
 
 
-print(mail.sending())
+print(mail)
