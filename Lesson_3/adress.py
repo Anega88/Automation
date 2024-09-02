@@ -1,7 +1,4 @@
-from union import Addressable
-
-
-class Adress(Addressable):
+class Adress:
 
     def __init__(self, postCode, city, street, building, appart):
         self.postCode = postCode
@@ -10,6 +7,19 @@ class Adress(Addressable):
         self.building = building
         self.appart = appart
 
-    def whichAdress(self):
-        return (f"{self.postCode}, {self.city}, {self.street},"
-                f"{self.building}-{self.appart}")
+      
+    def printPostCode(self):
+        return(self.postCode)
+    
+    def printCity(self):
+        return(self.city)
+    
+    def printStreet(self):
+        return(self.street)
+    
+    def printBuilding(self):
+        return(self.building)
+    
+    def printAppart(self):
+        return(self.appart)
+
