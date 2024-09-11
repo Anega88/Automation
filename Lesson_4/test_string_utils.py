@@ -8,11 +8,16 @@ StrUtils = StringUtils()
 # Большая первая буква
 @pytest.mark.positive_test
 @pytest.mark.parametrize('string, result', [
-    ("буква", "Буква"),  # с маленькой буквы
-    ("май месяц", "Май месяц"),  # текст с пробелом
-    ("январь 23", "Январь 23"),  # буквы и цифры
-    ("я", "Я"),  # одна буква
-    ("big", "Big")  # латиница
+    ("буква", "Буква"),
+    # с маленькой буквы
+    ("май месяц", "Май месяц"),
+    # текст с пробелом
+    ("январь 23", "Январь 23"),
+    # буквы и цифры
+    ("я", "Я"),
+    # одна буква
+    ("big", "Big")
+    # латиница
     ])
 def test_big_first_letter(string, result):
     strUtils = StringUtils()
@@ -23,23 +28,29 @@ def test_big_first_letter(string, result):
 # Удаление пробелов в начале
 @pytest.mark.positive_test
 @pytest.mark.parametrize('string, result', [
-    (" Пробел", "Пробел"),  # слово
-    ("   ", "  "),  # несколько пробелов
-    (" Удалить пробел", "Удалить пробел"),  # слова с пробелом в середине
-    (" 12345", "12345"),  # цифры
-    (" 12 345", "12 345")  # цифры с пробелом в середине
+    (" Пробел", "Пробел"),
+    # слово
+    ("   ", ""),
+    # несколько пробелов
+    (" Удалить пробел", "Удалить пробел"),
+    # слова с пробелом в середине
+    (" 12345", "12345"),
+    # цифры
+    (" 12 345", "12 345")
+    # цифры с пробелом в середине
     ])
 def test_delete_space(string, result):
     strUtils = StringUtils()
     res = strUtils.trim(string)
-    assert res == result
+    assert repr(res) == repr(result)
 
 
 # Из строки в список с разделителем
 @pytest.mark.positive_test
 def test_string_to_list_with_separator():
     strUtils = StringUtils()
-    res = strUtils.to_list("один-два-три-четыре-пять", "-")  # через дефис
+    res = strUtils.to_list("один-два-три-четыре-пять", "-")
+    # через дефис
     assert res == ["один", "два", "три", "четыре", "пять"]
 
 
@@ -63,21 +74,24 @@ def test_string_to_list_without_separator_nums():
 @pytest.mark.positive_test
 def test_string_to_list_dash():
     strUtils = StringUtils()
-    res = strUtils.to_list("1-2-3-4-5", "-")  # цифры через дефис
+    res = strUtils.to_list("1-2-3-4-5", "-")
+    # цифры через дефис
     assert res == ["1", "2", "3", "4", "5"]
 
 
 @pytest.mark.positive_test
 def test_string_to_list_colon():
     strUtils = StringUtils()
-    res = strUtils.to_list("один:два:три:четыре:пять", ":")  # через двоеточие
+    res = strUtils.to_list("один:два:три:четыре:пять", ":")
+    # через двоеточие
     assert res == ["один", "два", "три", "четыре", "пять"]
 
 
 @pytest.mark.positive_test
 def test_string_to_list_space():
     strUtils = StringUtils()
-    res = strUtils.to_list("один два три четыре пять", " ")  # через пробелы
+    res = strUtils.to_list("один два три четыре пять", " ")
+    # через пробелы
     assert res == ["один", "два", "три", "четыре", "пять"]
 
 
