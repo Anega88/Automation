@@ -1,0 +1,78 @@
+Баг-репорты:
+
+1.  Заголовок: "Опечатка в наименовании метода capitilize()"
+    Шаги для воспроизведения:
+        1. Открыть файл String_Utils.py
+        2. Просмотреть код метода def capitilize(self, string: str) -> str:
+    Ожидаемый результат: capitalize
+    Фактический результат: capitilize
+
+2.  Заголовок: "Ошибка при обработке значения None в методе capitalize()"
+    Шаги для воспроизведения: 
+        Запустить негативную проверку Pytest - test_big_first_letter_negative()        
+    Ожидаемый результат: Метод должен корректно обрабатывать None, возможно возвращая None или другое значение.
+    Фактический результат: Ошибка AttributeError: 'NoneType' object has no attribute 'capitalize'.
+    Логи: Lesson_4\test_string_utils.py:323:
+          Lesson_4\String_Utils.py:11: AttributeError
+
+3. Заголовок: "Ошибка при обработке значения None в методе trim()"
+    Шаги для воспроизведения: 
+        Запустить негативную проверку Pytest - test_delete_space_negative()        
+    Ожидаемый результат: Метод должен корректно обрабатывать None, возможно возвращая None или другое значение.
+    Фактический результат: Ошибка AttributeError: 'NoneType' object has no attribute 'startswith'.
+    Логи: Lesson_4\test_string_utils.py:343:
+          Lesson_4\String_Utils.py:19: AttributeError
+
+4. Заголовок: "Ошибка при обработке значения None в методе delete_symbol()"
+    Шаги для воспроизведения: 
+        Запустить негативную проверку Pytest - test_find_and_delete_letter()        
+    Ожидаемый результат: Метод должен корректно обрабатывать None, возможно возвращая None или другое значение.
+    Фактический результат: Ошибка AttributeError: 'NoneType' object has no attribute 'index'.
+    Логи: Lesson_4\test_string_utils.py:412:
+          Lesson_4\String_Utils.py:63: in delete_symbol
+            if self.contains(string, symbol):
+          Lesson_4\String_Utils.py:48: AttributeError
+
+5.  Заголовок: "Ошибка при обработке значения None в методе to_list()"
+    Шаги для воспроизведения: 
+        Запустить негативную проверку Pytest - test_string_to_list_with_none()        
+    Ожидаемый результат: Метод должен корректно обрабатывать None, возможно возвращая None или другое значение.
+    Фактический результат: Ошибка AttributeError: 'NoneType' object has no attribute 'startswith'.
+    Логи: Lesson_4\test_string_utils.py:369:
+          Lesson_4\String_Utils.py:32: in to_list
+            if self.is_empty(string):
+          Lesson_4\String_Utils.py:96: in is_empty
+            string = self.trim(string)
+          Lesson_4\String_Utils.py:19: AttributeError
+
+6. Заголовок: "Ошибка при обработке значения None в методе contains()"
+    Шаги для воспроизведения: 
+        Запустить негативную проверку Pytest - test_look_for_letter()        
+    Ожидаемый результат: Метод должен корректно обрабатывать None, возможно возвращая None или другое значение.
+    Фактический результат: Ошибка AttributeError: 'NoneType' object has no attribute 'index'.
+    Логи: Lesson_4\test_string_utils.py:390:
+          Lesson_4\String_Utils.py:48: AttributeError
+
+7. Заголовок: "Ошибка при обработке значения None в методе starts_with()"
+    Шаги для воспроизведения: 
+        Запустить негативную проверку Pytest - test_compare_first_letter_negative()        
+    Ожидаемый результат: Метод должен корректно обрабатывать None, возможно возвращая None или другое значение.
+    Фактический результат: Ошибка AttributeError: 'NoneType' object has no attribute 'startswith'.
+    Логи: Lesson_4\test_string_utils.py:436:
+          Lesson_4\String_Utils.py:76: AttributeError
+
+8. Заголовок: "Ошибка при обработке значения None в методе end_with()"
+    Шаги для воспроизведения: 
+        Запустить негативную проверку Pytest - test_compare_end_letter()        
+    Ожидаемый результат: Метод должен корректно обрабатывать None, возможно возвращая None или другое значение.
+    Фактический результат: Ошибка AttributeError: 'NoneType' object has no attribute 'endswith'.
+    Логи: Lesson_4\test_string_utils.py:460:
+          Lesson_4\String_Utils.py:87: AttributeError
+
+9. Заголовок: "Ошибка при обработке значения None в методе list_to_string()"
+    Шаги для воспроизведения: 
+        Запустить негативную проверку Pytest - test_list_to_string_none()        
+    Ожидаемый результат: Метод должен корректно обрабатывать None, возможно возвращая None или другое значение.
+    Фактический результат: Ошибка AttributeError: TypeError: object of type 'NoneType' has no len().
+    Логи: Lesson_4\test_string_utils.py:496:
+          Lesson_4\String_Utils.py:110: TypeError
