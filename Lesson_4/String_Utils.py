@@ -8,6 +8,9 @@ class StringUtils:
         Принимает на вход текст, делает первую букву заглавной и возвращает этот же текст
         Пример: `capitilize("skypro") -> "Skypro"`
         """
+        if string is None:
+            raise TypeError("String and symbol must not be None")
+        
         return string.capitalize()
 
     def trim(self, string: str) -> str:
@@ -15,6 +18,9 @@ class StringUtils:
         Принимает на вход текст и удаляет пробелы в начале, если они есть
         Пример: `trim("   skypro") -> "skypro"`
         """
+        if string is None:
+            raise TypeError("String and symbol must not be None")
+        
         whitespace = " "
         while string.startswith(whitespace):
             string = string.removeprefix(whitespace)
@@ -29,6 +35,9 @@ class StringUtils:
         Пример 1: `to_list("a,b,c,d") -> ["a", "b", "c", "d"]`
         Пример 2: `to_list("1:2:3", ":") -> ["1", "2", "3"]`
         """
+        if string is None or delimeter is None:
+            raise TypeError("String and symbol must not be None")
+        
         if self.is_empty(string):
             return []
 
@@ -43,6 +52,10 @@ class StringUtils:
         Пример 1: `contains("SkyPro", "S") -> True`
         Пример 2: `contains("SkyPro", "U") -> False`
         """
+
+        if string is None or symbol is None:
+            raise TypeError("String and symbol must not be None")
+        
         res = False
         try:
             res = string.index(symbol) > -1
@@ -60,6 +73,10 @@ class StringUtils:
         Пример 1: `delete_symbol("SkyPro", "k") -> "SyPro"`
         Пример 2: `delete_symbol("SkyPro", "Pro") -> "Sky"`
         """
+
+        if string is None or symbol is None:
+            raise TypeError("String and symbol must not be None")
+    
         if self.contains(string, symbol):
             string = string.replace(symbol, "")
         return string
@@ -73,6 +90,10 @@ class StringUtils:
         Пример 1: `starts_with("SkyPro", "S") -> True`
         Пример 2: `starts_with("SkyPro", "P") -> False`
         """
+
+        if string is None or symbol is None:
+            raise TypeError("String and symbol must not be None")
+    
         return string.startswith(symbol)
 
     def end_with(self, string: str, symbol: str) -> bool:
@@ -84,6 +105,9 @@ class StringUtils:
         Пример 1: `end_with("SkyPro", "o") -> True`
         Пример 2: `end_with("SkyPro", "y") -> False`
         """
+        if string is None or symbol is None:
+            raise TypeError("String and symbol must not be None")
+        
         return string.endswith(symbol)
 
     def is_empty(self, string: str) -> bool:
@@ -106,13 +130,18 @@ class StringUtils:
         Пример 2: `list_to_string(["Sky", "Pro"]) -> "Sky, Pro"`
         Пример 3: `list_to_string(["Sky", "Pro"], "-") -> "Sky-Pro"`
         """
+        if lst is None:
+            return None
+        
         string = ""
         length = len(lst)
 
+        
         if length == 0:
             return string
 
         for i in range(0, length - 1):
             string += str(lst[i]) + joiner
+            
 
         return string + str(lst[-1])
