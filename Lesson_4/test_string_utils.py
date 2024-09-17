@@ -318,7 +318,7 @@ def test_list_to_string_letter():
 
 
 # НЕГАТИВНЫЕ ПРОВЕРКИ
-# Большая первая буква
+# # Большая первая буква
 @pytest.mark.negative_test
 @pytest.mark.parametrize('string, result', [
     ("", ""),
@@ -340,7 +340,7 @@ def test_big_first_letter_negative(string, result):
         assert res == result
 
 
-# Удаление пробелов в начале
+# # Удаление пробелов в начале
 @pytest.mark.negative_test
 @pytest.mark.parametrize('string, result', [
     ("", ""),
@@ -360,7 +360,7 @@ def test_delete_space_negative(string, result):
         assert res == result
 
 
-# Из строки в список с разделителем
+# # Из строки в список с разделителем
 @pytest.mark.negative_test
 def test_string_to_list_with_separator_negative():
     strUtils = StringUtils()
@@ -380,12 +380,12 @@ def test_string_to_list_no_separator_string():
 @pytest.mark.negative_test
 def test_string_to_list_with_none():
     strUtils = StringUtils()
-    res = strUtils.to_list(None, None)
+    with pytest.raises(TypeError):
+        res = strUtils.to_list(None, [])
     # проверка на None
-    assert res is None
 
 
-# Поиск символа
+# # Поиск символа
 @pytest.mark.negative_test
 @pytest.mark.parametrize(('string', 'symbol', 'result'), [
     ("", "л", False),
@@ -407,7 +407,7 @@ def test_look_for_letter(string, symbol, result):
         assert res == result
 
 
-# Удаление указанных символов
+# # Удаление указанных символов
 @pytest.mark.negative_test
 @pytest.mark.parametrize(('string', 'symbol', 'result'), [
     ("", "а", ""),
@@ -429,7 +429,7 @@ def test_find_and_delete_letter_negative(string, symbol, result):
         assert res == result
 
 
-# Соответствие первого символа
+# # Соответствие первого символа
 @pytest.mark.negative_test
 @pytest.mark.parametrize(('string', 'symbol', 'result'), [
     ("", "П", False),
@@ -453,7 +453,7 @@ def test_compare_first_letter(string, symbol, result):
         assert res == result
 
 
-# Соответствие последнего символа
+# # Соответствие последнего символа
 @pytest.mark.negative_test
 @pytest.mark.parametrize(('string', 'symbol', 'result'), [
     ("", "а", False),
@@ -507,6 +507,6 @@ def test_list_to_string_no_separators():
 @pytest.mark.negative_test
 def test_list_to_string_none():
     strUtils = StringUtils()
-    result = strUtils.list_to_string(None, None)
+    result = strUtils.list_to_string(None, "")
     # проверка на None
     assert result is None
