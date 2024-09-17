@@ -15,17 +15,15 @@ driver.get('https://the-internet.herokuapp.com/login')
 sleep(1)
 
 # В поле Username ввести значение.
-username = driver.find_element(By.ID, 'username')
-username.send_keys("tomsmith")
+username = driver.find_element(By.ID, 'username').send_keys("tomsmith")
 sleep(2)
 
 # В поле Password ввести значение.
-password = driver.find_element(By.ID, 'password')
-password.send_keys("SuperSecretPassword!")
+password = driver.find_element(By.ID, 'password').send_keys("SuperSecretPassword!")
 sleep(2)
 
 # Нажать кнопку Login.
-login = driver.find_element(By.CSS_SELECTOR, '.fa.fa-2x.fa-sign-in')
+login = driver.find_element(By.CSS_SELECTOR, 'button.radius')
 login.click()
 sleep(2)
 

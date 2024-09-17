@@ -24,7 +24,6 @@ input_field.clear()
 sleep(1)
 
 # Ввести в поле текст 999
-input_field = driver.find_element(By.TAG_NAME, 'input')
 input_field.send_keys("999")
 
 sleep(3)
