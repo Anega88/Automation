@@ -38,30 +38,39 @@ button_submit.click()
 color_zip_code = waiter.until(EC.visibility_of_element_located(
     (By.CSS_SELECTOR, '#zip-code')
     )).value_of_css_property("background-color")
+
 color_first_name = waiter.until(EC.visibility_of_element_located(
     (By.CSS_SELECTOR, '#first-name')
     )).value_of_css_property("background-color")
+
 color_last_name = waiter.until(EC.visibility_of_element_located(
     (By.CSS_SELECTOR, '#last-name')
     )).value_of_css_property("background-color")
+
 color_address = waiter.until(EC.visibility_of_element_located(
     (By.CSS_SELECTOR, '#address')
     )).value_of_css_property("background-color")
+
 color_phone_number = waiter.until(EC.visibility_of_element_located(
     (By.CSS_SELECTOR, '#phone')
     )).value_of_css_property("background-color")
+
 color_email = waiter.until(EC.visibility_of_element_located(
     (By.CSS_SELECTOR, '#e-mail')
     )).value_of_css_property("background-color")
+
 color_city = waiter.until(EC.visibility_of_element_located(
     (By.CSS_SELECTOR, '#city')
     )).value_of_css_property("background-color")
+
 color_country = waiter.until(EC.visibility_of_element_located(
     (By.CSS_SELECTOR, '#country')
     )).value_of_css_property("background-color")
+
 color_job_position = waiter.until(EC.visibility_of_element_located(
     (By.CSS_SELECTOR, '#job-position')
     )).value_of_css_property("background-color")
+
 color_company = waiter.until(EC.visibility_of_element_located(
     (By.CSS_SELECTOR, '#company')
     )).value_of_css_property("background-color")

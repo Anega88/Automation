@@ -24,16 +24,19 @@ seven = driver.find_element(
     )
 seven.click()
 sleep(1)
+
 plus = driver.find_element(
     By.CSS_SELECTOR, 'span[class="operator btn btn-outline-success"]'
     )
 plus.click()
 sleep(1)
+
 eight = driver.find_element(
     By.XPATH, '(//span[@class="btn btn-outline-primary"])[2]'
     )
 eight.click()
 sleep(1)
+
 equal = driver.find_element(
     By.CSS_SELECTOR, 'span[class="btn btn-outline-warning"]'
     )
