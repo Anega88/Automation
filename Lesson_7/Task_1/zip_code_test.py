@@ -1,11 +1,14 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
+import pytest
 
 from Form import CheckZipCode
 
 
+@pytest.mark.tasks
 def test_full_fields_submit():
+    assert True
     driver = webdriver.Chrome(service=ChromeService(
         ChromeDriverManager().install()
         ))

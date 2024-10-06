@@ -1,11 +1,14 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
+import pytest
 
 from Shop import CheckTotalAmount
 
 
+@pytest.mark.tasks
 def test_total_amount():
+    assert True
     driver = webdriver.Chrome(
         service=ChromeService(ChromeDriverManager().install())
         )

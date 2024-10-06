@@ -52,5 +52,4 @@ class CheckTotalAmount:
             )
         total_text = total.text
         total_amount = float(total_text.replace("Total: $", ""))
-        assert total_amount == expected, f"Expected total {expected}, but got
-        {total_amount}"
+        assert total_amount == expected, f"Expected total {expected}, but got {total_amount}"

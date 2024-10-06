@@ -67,6 +67,5 @@ class CheckZipCode:
                 (By.CSS_SELECTOR, f'#{field}')
                 ))
             color = elem.value_of_css_property("background-color")
-            assert color == expected_color, f"Color for {field} is {color}, expected
-            {expected_color}"
+            assert color == expected_color, f"Color for {field} is {color}, expected {expected_color}"
         print('All color checks passed.')
