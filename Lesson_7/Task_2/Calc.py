@@ -13,7 +13,7 @@ class CheckCalculator:
         self._driver.implicitly_wait(4)
         self._driver.maximize_window()
     
-    def clear_fill_in_fuild(self, time):
+    def clear_fill_in_field(self, time):
         self._driver.find_element(By.CSS_SELECTOR, '#delay').clear()
         self._driver.find_element(By.CSS_SELECTOR, '#delay').send_keys(time)
   

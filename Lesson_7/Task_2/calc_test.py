@@ -11,7 +11,7 @@ def test_calculator():
         )
 
     calc = CheckCalculator(driver)
-    calc.clear_fill_in_fuild("45")
+    calc.clear_fill_in_field("45")
     calc.make_calculation()
     calc.check_result('15')
     driver.quit()
