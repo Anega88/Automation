@@ -20,8 +20,8 @@ def test_sauce_demo_checkout():
             By.CSS_SELECTOR, '#password'
             )
         password.send_keys('secret_sauce')
-
         driver.find_element(By.CSS_SELECTOR, '#login-button').click()
+
         driver.find_element(
             By.CSS_SELECTOR, '#add-to-cart-sauce-labs-backpack'
             ).click()
@@ -35,6 +35,7 @@ def test_sauce_demo_checkout():
             By.CSS_SELECTOR, 'a[class="shopping_cart_link"]'
             ).click()
         driver.find_element(By.CSS_SELECTOR, '#checkout').click()
+        
         driver.find_element(
             By.CSS_SELECTOR, '#first-name').send_keys('Ekaterina')
         driver.find_element(
@@ -44,6 +45,7 @@ def test_sauce_demo_checkout():
             By.CSS_SELECTOR, '#postal-code'
             ).send_keys('053600')
         driver.find_element(By.CSS_SELECTOR, '#continue').click()
+        
         total = driver.find_element(
             By.CSS_SELECTOR, 'div[class="summary_total_label"]'
             )
